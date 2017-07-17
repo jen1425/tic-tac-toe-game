@@ -15,11 +15,20 @@ var getMove = function() {
   return [row, col];
 };
 
+// updates the game board with the move that the current player made
+var updateBoard = function(move) {
+  let row = move[0];
+  let col = move[1];
+  board[row][col] = player;
+}
+
 // Outer while loop that alternates between x and o move
 while (moves < 8) {
 // Read player 1 move (x)
 move = getMove();
-// Update Board 
+// Update board with current move
+updateBoard(move); 
+
 // Display Board
 // Check if winner
 // Toggles player turn x or o
